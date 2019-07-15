@@ -9,6 +9,8 @@ RUN \
 
 FROM nginx:1.10
 
+RUN apt-get update && apt-get install htop
+
 COPY --from=build-dev /isubata /home/isucon/isubata
 #COPY --from=build-dev /isubata/files/app/nginx.conf /etc/nginx/conf.d/isucon.conf
 COPY isucon.conf /etc/nginx/conf.d/isucon.conf
